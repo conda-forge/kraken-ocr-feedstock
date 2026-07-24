@@ -1,5 +1,5 @@
 {% set name = "kraken" %}
-{% set version = "7.0.2" %}
+{% set version = "7.0.3" %}
 
 package:
   name: "kraken-ocr"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d94e763ff798765c8b1baecdd2ec231735971069dd06a509100b49e929560682
+  sha256: 76d822d348f8033aef5415a537395c36f3c4e1f33558acd94eb9f51551cfe0be
 
 build:
   # coremltools is unavailable on win-64 but required by kraken
