@@ -1,13 +1,13 @@
 {% set name = "kraken" %}
-{% set version = "7.0.3" %}
+{% set version = "7.1" %}
 
 package:
   name: "kraken-ocr"
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 76d822d348f8033aef5415a537395c36f3c4e1f33558acd94eb9f51551cfe0be
+  sha256: 16b9a1893281450b834878b50e713553ee7751fc8e34b2407d1ee79ed7263c40
 
 build:
   # coremltools is unavailable on win-64 but required by kraken
@@ -17,7 +17,7 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - hatchling
     - versioningit
     - pip
@@ -35,7 +35,7 @@ requirements:
     - coremltools >=9.0,<10.dev0
     - jinja2 >=3.1.6,<3.2.dev0
     - torchvision >=0.5.0
-    - pytorch >=2.4.0,<=2.12
+    - pytorch >=2.9.0,<=2.12
     - scikit-learn >=1.7.2,<1.8.dev0
     - scikit-image >=0.25.2,<0.26.dev0
     - shapely >=2.1.2,<2.2.dev0
