@@ -1,17 +1,18 @@
 {% set name = "kraken" %}
-{% set version = "7.1" %}
+{% set version = "7.1.1" %}
 
 package:
   name: "kraken-ocr"
   version: "{{ version }}"
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 16b9a1893281450b834878b50e713553ee7751fc8e34b2407d1ee79ed7263c40
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 489079856742ad308a069321a62f89c4eecb008ef4529798a19ff8799ae875d5
 
 build:
-  # coremltools is unavailable on win-64 but required by kraken
-  skip: true  # [win]
+  # coremltools is unavailable on win-64 but required by kraken;
+  # Kraken 7.1.1 requires Python <3.14
+  skip: true  # [win or py >= 314]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
