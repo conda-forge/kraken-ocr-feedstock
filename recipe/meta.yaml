@@ -10,8 +10,9 @@ source:
   sha256: 489079856742ad308a069321a62f89c4eecb008ef4529798a19ff8799ae875d5
 
 build:
-  # coremltools is unavailable on win-64 but required by kraken
-  skip: true  # [win]
+  # coremltools is unavailable on win-64 but required by kraken;
+  # Kraken 7.1.1 requires Python <3.14
+  skip: true  # [win or py >= 314]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
