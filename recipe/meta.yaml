@@ -14,7 +14,7 @@ build:
   # Kraken 7.1.1 requires Python <3.14
   skip: true  # [win or py >= 314]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
